@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://source.developers.google.com/p/cyclingcompare/r/cyclingcompare-devops']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/bikecompare-dev/product-search-handlers', '-f', 'Dockerfile-handlers', '.' ]
+images:
+- 'gcr.io/bikecompare-dev/product-search-handlers'

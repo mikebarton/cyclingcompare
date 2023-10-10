@@ -1,0 +1,17 @@
+@import '../../../components/shared/styles/main.scss';
+
+.menu_container{
+    margin: 20px 20px 20px 20px;
+    color: $foreground-main;
+    display: flex;
+    flex-direction: column;
+
+    span{
+        margin: 5px 0px;
+    }
+}
+
+.active{
+    font-size: larger;
+    font-weight: bolder;
+}

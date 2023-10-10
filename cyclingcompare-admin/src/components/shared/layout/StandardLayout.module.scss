@@ -1,0 +1,35 @@
+@import '../styles/main.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background: $bg-layoutmain;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header{
+    background-color: $bg-secondary;
+    @include chunky-border-bottom;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    background: $bg-layoutmain;
+    width: 180px;
+    @include chunky-border-right;
+}
+
+.main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width:100%;
+    background: $bg-layoutmain;
+    @extend .non-proj-main-panel;
+}

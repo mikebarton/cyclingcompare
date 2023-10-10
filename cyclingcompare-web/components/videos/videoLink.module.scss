@@ -1,0 +1,39 @@
+
+
+.linkPanel{
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(85deg,#434343bb,#262626bb);
+    padding: 10px 10px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    .linkText{
+        width: 100%;                     
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        // overflow: hidden;
+
+        .authorText{
+            font-size: smaller;
+            margin-top: 5px;
+        }
+    }   
+
+    .logo{
+        display: flex;                        
+        flex: 1 1 50px;
+
+        img{
+            border-radius: 30%;
+            transform: scale(0.6, 0.6);
+        }
+    }
+}

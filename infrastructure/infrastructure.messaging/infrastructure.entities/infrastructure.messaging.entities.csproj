@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="1.0.0-beta21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\infrastructure.messaging.messages\infrastructure.messaging.messages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="infrastructure.storage">
+      <HintPath>..\libs\infrastructure.storage\infrastructure.storage.dll</HintPath>
+    </Reference>
+    <Reference Include="infrastructure.storage.firestore">
+      <HintPath>..\libs\infrastructure.storage\infrastructure.storage.firestore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

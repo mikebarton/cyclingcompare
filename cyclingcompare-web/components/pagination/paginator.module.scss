@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    .buttonContainer{
+        display: flex;
+        justify-content: space-evenly;
+        align-self: stretch;
+        width: 200px;
+
+        div{
+            cursor: pointer;
+            color: $theme_orange;
+        }
+    }
+}

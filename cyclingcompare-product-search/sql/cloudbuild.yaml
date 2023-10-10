@@ -1,0 +1,20 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: container-build
+  args: ['build', '-t', 'gcr.io/bikecompare-dev/product-search-sql', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/bikecompare-dev/product-search-sql']
+  timeout: 500s
+- name: 'alpine:3'
+  id: proxy-install
+  entrypoint: sh
+  args:
+      - '-c'
+      - 'wget -O /workspace/cloud_sql_proxy https://storage.googleapis.com/cloudsql-proxy/v1.16/cloud_sql_proxy.linux.386 && chmod +x /workspace/cloud_sql_proxy'  
+- name: 'gcr.io/cloud-builders/docker'
+  id: run-docker-migration  
+  entrypoint: /bin/sh
+  args:
+      - -c
+      - '(/workspace/cloud_sql_proxy -dir=/. -instances=bikecompare-dev:australia-southeast1:bikecompare-dev-sql=tcp:0.0.0.0:3307 & sleep 5) && (docker run gcr.io/bikecompare-dev/product-search-sql)'
+  waitFor: ['proxy-install']

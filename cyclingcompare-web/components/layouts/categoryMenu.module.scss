@@ -1,0 +1,87 @@
+@import '../../styles/variables.scss';
+.menuContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $theme_blue;
+    
+}
+
+.menuBackground{
+    position: absolute;
+    top: 0;
+    bottom: -100%;
+    left: 0;
+    width:100%;
+    background-color: rgba(65, 64, 64, 0.6);
+    z-index: 1;
+}
+
+.menuHeader{
+    background-color: $theme_blue;
+    height: 50px;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .paneContainer{
+      width: $desktop_width;
+      position: relative;
+      left: 0;
+  }
+
+  .vertMenuContainer{
+      position: relative;
+      background-color: royalblue;
+      align-self: stretch;
+  }
+
+  .menu{
+    width: $desktop_width;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;    
+    justify-content: space-around;
+    font-size: small;
+    background-color: $theme_blue;
+    z-index: 2;
+
+    img{
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        align-self: center;
+    }
+  }
+
+  .burger{
+      display: none;    
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .menuItem{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $theme_orange;      
+  }
+
+  @media only all and (max-width: 1080px){
+    .menu{
+      display: none;
+    }
+
+    .menuHeader{
+        justify-content: flex-start;
+    }
+
+    .burger{
+        display: flex;
+    }
+  }
+

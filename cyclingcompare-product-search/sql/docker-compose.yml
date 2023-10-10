@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    image: gcr.io/bikecompare-dev/product-search-sql
+    depends_on:
+    - cloud-sql-proxy
+    environment:
+      # You must set an URL to access your database. On sequelize (nodejs) it follows this
+      # format: db-type://user:password@host:port/database-name
+      # the one below is for a MySQL database.
+      DATABASE_URL: mysql://dbuser:dbpassword@cloud-sql-proxy:3306/database
+
+  cloud-sql-proxy:
+    image: gcr.io/cloudsql-docker/gce-proxy:1.16
+    # Port: MySQL (3306), PostgreSQL (5433)
+    command: /cloud_sql_proxy -instances=bikecompare-dev:australia-southeast1:bikecompare-dev-sql=tcp:0.0.0.0:3307 -credential_file=/secrets/cloudsql/bikecompare-dev-2215fb28bad8.json
+    volumes:
+    # this mounts your application default credential on the container, preventing the
+    # 'invalid json file "/config": google: read JWT from JSON credentials: 'type' field is "authorized_user" (expected "service_account")'
+    # error if you point to the actual credential file directly
+    - ./bikecompare-dev-2215fb28bad8.json:/secrets/cloudsql/bikecompare-dev-2215fb28bad8.json
+    ports:
+    - 3307:3307

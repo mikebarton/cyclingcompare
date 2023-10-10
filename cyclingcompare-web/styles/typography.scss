@@ -1,0 +1,49 @@
+html, body {
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;    
+}
+
+h1, .h1 { 
+    font-size: 1.5rem; /* 48 / 16 */ 
+    line-height: 1.5rem; /* 48 / 48 */ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h2, .h2 { 
+    font-size: 1.1rem; /* 36 / 16 */
+     line-height: 1.1rem; /* 48 / 36 */
+     font-family: 'Roboto', sans-serif;
+     font-weight: 400;
+ } 
+
+h3, .h3 { 
+    font-size: 1rem; /* 24 / 16 */ 
+    line-height: 1rem; /* 24 / 24 */ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+} 
+
+h4, .h4 { 
+    font-size: .75rem; /* 21 / 16 */ 
+    line-height: 1.142857142857143em; /* 24 / 21 */ 
+} 
+
+h5, .h5 { 
+    font-size: .5rem; /* 18 / 16 */ 
+    line-height: 1.333333333333333em; /* 24 / 18 */ 
+} 
+
+h6, .h6 { 
+    font-size: 1rem; /* 16 / 16 */ 
+    line-height: 1.5rem; /* 24 / 16 */ 
+} 
+
+p, ul, ol, li, code, pre, label, input, button { 
+    font-size: 1rem; /* 16 / 16 */ 
+    line-height: 1.5rem; /* 24 / 16 */
+ }
+
+.small-text {
+    font-size: 0.75rem;
+}

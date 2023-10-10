@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+
+
+.bodyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodyPage{
+    max-width: $desktop_width;
+    width: 100%;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: -5px 5px 20px #50505028;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+
+}
+
+.blackSection{
+    background-color: $theme_orange;
+    height: 10px;
+}
+
+.blueSection{
+    background-color: $theme_blue;
+    height: 20px;
+    color: white;
+    padding: 2px 5px;
+}
+
+.pageSplit{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    
+}
+
+.filterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.filterColumn{    
+    width: 200px;    
+}
+
+.mainColumn{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 10px;     
+    padding-right: 5px;  
+    width: 100%; 
+}
+
+.link{
+    cursor: pointer;
+}
+
+
+@media only all and (max-width: 1080px){
+    .filterContainer{
+        display: none;
+    }
+  }

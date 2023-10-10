@@ -1,0 +1,64 @@
+steps:
+  - name: ubuntu
+    args:
+      - '-c'
+      - |
+        echo "$$SSH_KEY" > /root/.ssh/id_rsa
+        chmod 400 /root/.ssh/id_rsa
+        echo "$$HOST_FINGERPRINT" >> /root/.ssh/known_hosts
+        chmod 400 /root/.ssh/known_hosts      
+    id: Load SSH Keys
+    entrypoint: bash
+    secretEnv:
+      - SSH_KEY
+      - HOST_FINGERPRINT
+    volumes:
+      - name: ssh
+        path: /root/.ssh
+  - name: gcr.io/cloud-builders/git
+    args:
+      - clone
+      - '--recurse-submodules'
+      - $_REPO_SSH
+    id: Git Clone
+    entrypoint: git
+    volumes:
+      - name: ssh
+        path: /root/.ssh
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '--no-cache'
+      - '-t'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+      - .
+      - '-f'
+      - $_DOCKERFILE_NAME
+    dir: $_DOCKERFILE_LOCATION
+    id: Docker Build
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+    id: Docker Push
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - run
+      - services
+      - update
+      - $_SERVICE_NAME
+      - '--platform=managed'
+      - >-
+        --image=$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - >-
+        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID,$_LABELS
+      - '--region=$_DEPLOY_REGION'
+      - '--quiet'
+    id: Deploy
+    entrypoint: gcloud
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/source-repo-ssh-key/versions/2
+      env: SSH_KEY
+    - versionName: projects/$PROJECT_ID/secrets/source-repo-host-fingerprint/versions/1
+      env: HOST_FINGERPRINT

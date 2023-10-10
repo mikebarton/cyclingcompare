@@ -1,0 +1,258 @@
+# openapi2-run.yaml
+swagger: '2.0'
+info:
+  title: bikecompare-backend-1 
+  description: API to cover the backend services for bikecompare 
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+paths:
+  /Category/GetAll:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app/Category/GetAll
+        path_translation: CONSTANT_ADDRESS
+      summary: Categories
+      operationId: getAll
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /ProductSummary/GetTopDealsByCategory/{categoryId}:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS 
+      parameters:
+        - in: path
+          name: categoryId
+          type: string
+          required: true
+          description: Id of the category that the product will belong to.        
+      summary: ProductSummary
+      operationId: getTopDealsByCategory
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /ProductSummary/GetTopBikes:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app/ProductSummary/GetTopBikes
+        path_translation: CONSTANT_ADDRESS
+      summary: ProductSummary
+      operationId: getTopBikes
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /ProductSummary/GetOtherDeals:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app/ProductSummary/GetOtherDeals  
+        path_translation: CONSTANT_ADDRESS
+      summary: ProductSummary
+      operationId: getOtherDeals
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /ProductSummary/GetPagedByCategoryId/ps/{pageSize}/pn/{pageNum}/so/{sortOrder}/cid/{categoryId}:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app  
+        path_translation: APPEND_PATH_TO_ADDRESS 
+      parameters:
+        - in: path
+          name: categoryId
+          type: string
+          required: true
+          description: Id of the category that the product will belong to.
+        - in: path
+          name: pageSize
+          type: integer
+          required: true
+          description: the page size
+        - in: path
+          name: pageNum
+          type: integer
+          required: true
+          description: the page num
+        - in: path
+          name: sortOrder
+          type: integer
+          required: true
+          description: the sort order
+      summary: ProductSummary
+      operationId: getPagedByCategoryId
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /Listing/GetListing/{listingId}:
+    get:
+      x-google-backend:
+        address: https://listings-api-yhip5lgiwa-ts.a.run.app   
+        path_translation: APPEND_PATH_TO_ADDRESS 
+      parameters:
+        - in: path
+          name: listingId
+          type: string
+          required: true
+          description: Id of the listing that the product will belong to.
+      summary: Listing
+      operationId: getListingById
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string          
+  /ProductSummary/Search/{query}:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      parameters:
+        - in: path
+          name: query
+          type: string
+          required: true
+          description: query to send to server
+      summary: ProductSummary search by keywords
+      operationId: searchByKeyword
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string    
+    options:
+      operationId: searchByKeywordOptions
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      parameters:
+        - in: path
+          name: query
+          type: string
+          required: true
+          description: query to send to server
+      summary: ProductSummary search by keywords
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string    
+        '204':
+          description: successful options response
+  /ProductSummary/GetFilters:
+    get:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS       
+      summary: Product Filters
+      operationId: getFiltersByCategoryId
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string         
+  /ProductSummary/FilterProducts/ps/{pageSize}/pn/{pageNum}/so/{sortOrder}/cid/{categoryId}:
+    post:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS   
+      parameters:
+        - in: path
+          name: categoryId
+          type: string
+          required: true
+          description: Id of the category that the product will belong to.
+        - in: path
+          name: pageSize
+          type: integer
+          required: true
+          description: the page size
+        - in: path
+          name: pageNum
+          type: integer
+          required: true
+          description: the page num
+        - in: path
+          name: sortOrder
+          type: integer
+          required: true
+          description: the sort order
+      summary: Filtered Products
+      operationId: getFilteredProducts
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string        
+    options:
+      x-google-backend:
+        address: https://product-search-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS   
+      parameters:
+        - in: path
+          name: categoryId
+          type: string
+          required: true
+          description: Id of the category that the product will belong to.
+        - in: path
+          name: pageSize
+          type: integer
+          required: true
+          description: the page size
+        - in: path
+          name: pageNum
+          type: integer
+          required: true
+          description: the page num
+        - in: path
+          name: sortOrder
+          type: integer
+          required: true
+          description: the sort order
+      summary: Filtered Products
+      operationId: getFilteredProductsOptions
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string      
+        '204':
+          description: successful options response
+  /Banner/GetRandomBanner:
+    get:
+      x-google-backend:
+        address: https://imaging-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS         
+      summary: Get a random banner based on height and width
+      operationId: getRandomBanner
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string        
+    options:
+      x-google-backend:
+        address: https://imaging-api-yhip5lgiwa-ts.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      summary: Get a random banner based on height and width
+      operationId: getRandomBannerOptions
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string      
+        '204':
+          description: successful options response
+    

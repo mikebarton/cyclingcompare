@@ -1,0 +1,31 @@
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+
+    <changeSet  author="mikebarton"  id="20210128-1">  
+        <createTable schemaName="bikecompare_import" tableName="Merchant">  
+            <column  name="MerchantId"  type="char(38)" />  
+            <column name="IsDeleted" type="bit" defaultValueNumeric="0" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="CommissionMax" type="decimal(10,4)"/>
+            <column name="CommissionMin" type="decimal(10,4)"/> 
+            <column name="CommissionRate" type="decimal(10,4)"/>        
+            <column name="CookieDurationHours" type="int" />
+            <column name="DateModified" type="datetime"/>
+            <column name="Status" type="tinytext"/>
+            <column name="Name" type="tinytext"/>
+            <column name="Summary" type="text"/>
+            <column name="TargetMarket" type="tinytext"/>
+            <column name="TargetUrl" type="text"/>
+            <column name="TermsAndConditions" type="longtext"/>
+            <column name="TrackingCode" type="text"/>
+            <column name="TrackingUrl" type="text"/>
+            <column name="ValidationPeriod" type="int"/>
+        </createTable>  
+    </changeSet>
+    
+</databaseChangeLog>

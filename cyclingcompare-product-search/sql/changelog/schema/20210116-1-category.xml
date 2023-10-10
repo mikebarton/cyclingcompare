@@ -1,0 +1,21 @@
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+
+    <changeSet  author="mikebarton"  id="20210116-1">  
+        <createTable schemaName="bikecompare_product_search" tableName="Category">  
+            <column  name="CategoryId"  type="char(38)" />  
+            <column  name="Title"  type="tinytext"/>  
+            <column  name="ParentId"  type="char(38)" />  
+            <column name="Position" type="smallint"/>
+            <column name="Description" type="longtext"/>
+            <column name="IsEnabled" type="tinyint(1)"/> 
+            <column name="UrlSlug" type="tinytext"/>        
+            <column name="CategoryBannerImage" type="text"/>
+        </createTable>  
+    </changeSet>
+    
+</databaseChangeLog>

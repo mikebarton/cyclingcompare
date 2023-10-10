@@ -1,0 +1,13 @@
+.paneContainer{
+    display:flex;
+    width: 100%;
+    // background-color: rgb(178, 197, 248);
+    min-height: 100px;
+    flex-direction: column;
+    padding-right: 10px;
+    align-items: center;
+
+    .bannerContainer{
+        margin: 20px 0;
+    }
+}

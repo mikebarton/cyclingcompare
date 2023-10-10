@@ -1,0 +1,29 @@
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+
+    <changeSet  author="mikebarton"  id="20210219-4">  
+        <createTable schemaName="bikecompare_listings" tableName="ListingConversion">  
+            <column  name="ConversionId"  type="char(38)" />                          
+            <column  name="MerchantId"  type="char(38)" />  
+            <column  name="ProductId"  type="char(38)" />  
+            <column name="TrackingUrl" type="text"/>
+            <column name="StockLevel" type="text"/>
+            <column name="SKU" type="varchar(100)"/>
+            <column name="Price" type="decimal(20,2)"/>
+            <column name="PriceRrp" type="decimal(20,2)"/>
+            <column name="DeliveryCost" type="decimal(10,2)"/>
+            <column name="DeliveryTime" type="text"/>
+            <column name="IPAddress" type="varchar(100)"/>
+            <column name="Referer" type="varchar(500)"/>
+            <column name="UserAgent" type="varchar(5000)"/>
+            <column name="Host" type="varchar(500)"/>
+            <column name="Origin" type="varchar(500)"/>
+            <column name="DateCreated" type="datetime"/>
+        </createTable>  
+    </changeSet>
+    
+</databaseChangeLog>

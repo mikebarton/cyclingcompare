@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\SourceCode\bikecompare\infrastructure\infrastructure.messaging" t="IncludeFlat">
+      <e p="infrastructure.entities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="infrastructure.messaging.entities.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp5.0" t="Include">
+              <e p="infrastructure.messaging.entities.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ProcessedMessage.cs" t="Include" />
+      </e>
+      <e p="infrastructure.messaging" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IMessagePublisher.cs" t="Include" />
+        <e p="infrastructure.messaging.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp5.0" t="Include">
+              <e p="infrastructure.messaging.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="infrastructure.messaging.gcp" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GcpMessagingConfig.cs" t="Include" />
+        <e p="GcpMessagingService.cs" t="Include" />
+        <e p="infrastructure.messaging.gcp.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp5.0" t="Include">
+              <e p="infrastructure.messaging.gcp.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="infrastructure.messaging.messages" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GcpMessage.cs" t="Include" />
+        <e p="infrastructure.messaging.messages.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp5.0" t="Include">
+              <e p="infrastructure.messaging.messages.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="infrastructure.messaging.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\michael.barton\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\michael.barton\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_infrastructure.messaging.1162089412.00" t="ExcludeRecursive" />
+    <e p="C:\Users\michael.barton\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+  </component>
+</project>

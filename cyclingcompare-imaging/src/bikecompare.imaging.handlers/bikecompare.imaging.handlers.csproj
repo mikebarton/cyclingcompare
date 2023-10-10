@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>0460a517-f60d-4658-a4da-e54ddd209a95</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="CoenM.ImageSharp.ImageHash" Version="1.0.0" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="Google.Cloud.PubSub.V1" Version="2.3.0" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="3.4.0" />
+    <PackageReference Include="Grpc.Core" Version="2.35.0" />
+    <PackageReference Include="Insight.Database.Providers.MySql" Version="6.3.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bikecompare.imaging.messages\bikecompare.imaging.messages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="bikecompare.messages">
+      <HintPath>..\libs\bikecompare.messages\bikecompare.messages.dll</HintPath>
+    </Reference>
+    <Reference Include="infrastructure.messaging">
+      <HintPath>..\libs\infrastructure.messaging\infrastructure.messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="infrastructure.messaging.gcp">
+      <HintPath>..\libs\infrastructure.messaging.gcp\infrastructure.messaging.gcp.dll</HintPath>
+    </Reference>
+    <Reference Include="infrastructure.messaging.messages">
+      <HintPath>..\libs\infrastructure.messaging.messages\infrastructure.messaging.messages.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

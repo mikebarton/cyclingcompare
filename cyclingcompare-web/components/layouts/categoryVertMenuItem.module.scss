@@ -1,0 +1,37 @@
+.vertMenuItem{
+    margin-bottom: 10px;
+    display: flex;    
+    flex-direction: column;
+
+    .selectedMenuHeader{
+        background-color: rgb(28, 55, 105);
+        align-items: stretch;
+        margin-bottom: 3px;
+        padding-left: 10px;
+    }    
+
+    .vertMenuItemHeader{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 10px;
+
+        .chevron{
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .subCategory{
+        font-size: smaller;
+        background-color: rgb(28, 55, 105);
+        margin-bottom: 3px;
+        padding-left: 20px;
+        padding: 3px;
+
+        span{
+            margin-left: 10px;
+        }
+    }
+}

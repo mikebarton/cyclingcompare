@@ -1,0 +1,33 @@
+.merchantList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .merchant{
+        margin-bottom: 30px;
+
+        .merchantHeader{
+            display: flex;
+            align-items: center;
+
+            h3{
+                margin: 5px 10px
+            }
+        }
+
+        .controlButton{
+            margin: 2px;
+            padding: 10px;
+            display: inline-block;
+            background-color: #c2ba72;
+            border-radius: 10px;
+        }
+    }
+}
+
+.termsContainer{
+    height: 80vh;
+    padding: 20px;
+    overflow-y: scroll;
+}

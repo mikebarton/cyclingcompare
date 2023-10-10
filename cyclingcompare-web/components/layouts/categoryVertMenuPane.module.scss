@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+.vertMenu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    background-color:  $theme_blue;
+    height: 1000px;
+    border-right: 1px  #000000 solid;
+    border-top: 1px #000000 solid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 10px;
+    z-index: 2;
+    
+}
+

@@ -1,0 +1,119 @@
+$bg-primary:#f8f8f7d7;
+$bg-secondary: #f6f7f5dc;
+$bg-tertiary:#f1fccbdc;
+$bg-layoutmain: $bg-primary;
+$bg-project-canvas: #eaedf2;
+
+$foreground-main: #333;
+$foreground-main-contrast: #fefefe;
+$foreground-secondary: #888;
+
+$fill-success: #51c464;
+$fill-default: #5194c4;
+$fill-warning: #e8ba50;
+$fill-error: #c45151;
+$fill-form: #eee;
+
+$border-main: #ccc; 
+$border-form: darken($fill-form,10%);
+
+$fill-highlight: #cae9ff;
+$fill-selected: #aed4ef;
+
+$button-bg: $fill-default;
+
+/* UNITS */
+$spacing-s: 4px;
+$spacing-m: 8px;
+$spacing-l: 12px;
+$spacing-xl: 24px;
+
+$chunky-border-width: 2px;
+
+/* MIXINS & EXTENDS*/
+.chunky-border {
+    border-width: $chunky-border-width;
+    border-color: #869690;
+    border-style: solid;
+}
+@mixin chunky-border-top {
+    @extend .chunky-border;
+    border-width: 0; 
+    border-top-width: $chunky-border-width;
+}
+@mixin chunky-border-right {
+    @extend .chunky-border;
+    border-width: 0; 
+    border-right-width: $chunky-border-width;
+}
+@mixin chunky-border-bottom {
+    @extend .chunky-border;
+    border-width: 0; 
+    border-bottom-width: $chunky-border-width;
+}
+@mixin chunky-border-left {
+    @extend .chunky-border;
+    border-width: 0; 
+    border-left-width: $chunky-border-width;
+}
+.box-shadow {
+    box-shadow: 0 2px 5px rgba(#000,0.1);
+}
+.top-panel {
+    background-color: $bg-secondary;
+    padding: $spacing-s $spacing-xl;
+    @include chunky-border-bottom();
+}
+.left-panel {
+    background-color: $bg-secondary;
+    padding: $spacing-m;
+    @include chunky-border-right();
+}
+.right-panel {
+    background-color: $bg-secondary;
+    padding: $spacing-m;
+    @include chunky-border-left();
+}
+.proj-main-panel { 
+    background-color: $bg-project-canvas;
+}
+.non-proj-main-panel {
+    background-color: $bg-layoutmain;
+}
+.main-list {
+    margin: 100px auto;
+    width: 50%;
+    min-width: 646px;
+    padding: $spacing-l $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    background: $bg-primary;
+    border: 1px solid $border-main;
+    border-radius: 2px;
+    @extend .box-shadow;
+}
+.main-list-row { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in all;
+}
+.main-list-row-hover {
+    
+    background: $fill-highlight;
+    padding: 0 $spacing-l;
+    text-decoration: none;
+}
+.stage-pill {
+    background: rgba(darken($fill-highlight,20%),0.3);
+    padding: 10px;
+    border-radius: 5px;
+}

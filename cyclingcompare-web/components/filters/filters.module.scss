@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+.filterContainer{
+    width: 100%;
+    
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .filterTitle{
+        margin: 5px 10px;
+        background-color: $theme_tertiary;
+        font-weight: lighter;
+        border-style: solid;
+        border-color: #c4c4c4;
+        border-width: 1px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .updateButton{
+        align-self: flex-end;
+        margin: 10px;
+        padding: 7px 10px;
+        font-size: 0.7rem;
+        background-color: $theme_orange;
+        color: $theme_tertiary;
+        cursor: pointer;
+    }
+
+    .checkContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding-bottom: 10px;
+        padding: 0 5px;
+        min-height: 50px;
+
+        label{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 0.7rem;
+        }
+    }
+
+    .restrictedChecks{
+        max-height: 100px;
+        overflow-y: hidden;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    padding: 0 5px;
+
+    .column{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 0.7rem;
+        }
+    }
+
+}
+
+.rangeInput{
+    width: 60px;
+}
+
+.listChange{
+    font-size: 0.6rem;
+    padding: 0 15px;
+    cursor: pointer;
+    color: blue;
+}

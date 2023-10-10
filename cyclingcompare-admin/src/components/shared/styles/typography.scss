@@ -1,0 +1,57 @@
+
+@font-face{
+    font-family: 'Montserrat';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('./fonts/Montserrat/Montserrat-Medium.ttf')  format('truetype');    
+}
+
+html, body {
+    font-size: 100%;
+    font-family: 'Montserrat', Fallback, sans-serif;        
+}
+
+h1, .h1 { 
+    font-size: 3em; /* 48 / 16 */ 
+    line-height: 1em; /* 48 / 48 */ 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+h2, .h2 { 
+    font-size: 2.25em; /* 36 / 16 */
+     line-height: 1.333333333333333em; /* 48 / 36 */
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 400;
+ } 
+
+h3, .h3 { 
+    font-size: 1.5em; /* 24 / 16 */ 
+    line-height: 1em; /* 24 / 24 */ 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+} 
+
+h4, .h4 { 
+    font-size: 1.3125em; /* 21 / 16 */ 
+    line-height: 1.142857142857143em; /* 24 / 21 */ 
+} 
+
+h5, .h5 { 
+    font-size: 1.125em; /* 18 / 16 */ 
+    line-height: 1.333333333333333em; /* 24 / 18 */ 
+} 
+
+h6, .h6 { 
+    font-size: 1em; /* 16 / 16 */ 
+    line-height: 1.5em; /* 24 / 16 */ 
+} 
+
+p, ul, ol, li, code, pre, label, input, button { 
+    font-size: 1em; /* 16 / 16 */ 
+    line-height: 1.5em; /* 24 / 16 */
+ }
+
+.small-text {
+    font-size: 0.75em;
+}

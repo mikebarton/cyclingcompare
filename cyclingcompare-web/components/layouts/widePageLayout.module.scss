@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+
+.bodyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.showBackground{
+    box-shadow: -5px 5px 20px #50505028;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.bodyPage{
+    max-width: $desktop_width * 1.2;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+
+@media only all and (max-width: ($desktop_width * 1.2)){
+    
+    .bodyPage{
+        max-width: 100%;
+    }
+}

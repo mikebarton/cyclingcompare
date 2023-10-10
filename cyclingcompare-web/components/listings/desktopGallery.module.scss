@@ -1,0 +1,24 @@
+.imageContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    flex-grow: 1;
+
+    .carouselContainer{
+        width: 300px;
+    }
+
+    .mainImage{        
+        width: 80%;
+        height: auto;
+    }
+
+    .previewImage{
+        margin: 10px 0;
+
+        img{
+            width: 100%;
+            height:auto;
+        }
+    }
+}

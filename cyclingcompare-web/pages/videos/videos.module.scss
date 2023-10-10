@@ -1,0 +1,118 @@
+@import '../../styles/variables.scss';
+
+
+
+.banner{
+    position: relative;
+    overflow-y: hidden;    
+    padding-top: 15%;
+
+    img{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: auto;            
+    }
+}
+
+.videoGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .videoSummary{
+        max-width: 350px;
+        margin: 10px 20px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(196, 196, 196);
+        padding: 10px 10px;
+        height: 400px;
+        overflow-y: hidden;
+        position: relative;
+        cursor: pointer;
+        
+
+        .previewImage{
+
+            img{
+                max-width: 350px;
+                height: auto;
+            }
+        }
+
+        p{
+            font-size: 12pt;
+        }
+
+        p:before{
+            content: '';
+            position: absolute; 
+            bottom: 0; 
+            left: 0;
+            width: 100%; 
+            text-align: center; 
+            margin: 0; padding: 30px 0; 
+                
+            /* "transparent" only works here because == rgba(0,0,0,0) */
+            background-image: linear-gradient(to bottom, transparent, #F7F7FF);
+        }
+    }
+}
+
+
+
+.videoPage{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    .videoContent{
+        
+        width: 100%;
+
+        .videoText{
+            display:flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding-right: 10px;
+            max-width: 500px;
+        }
+
+        
+
+        .video{
+            float:right;
+            margin-left: 40px;
+            height: auto;
+            margin-top:10px;
+
+            iframe{
+                width: 500px;
+                height: 315px;
+            }
+            
+        }
+    }
+
+}
+
+
+@media only all and (max-width: 560px){       
+    .videoPage{
+            .videoContent{
+                .video{
+                    iframe{
+                        width: 300px;
+                        height: 189px;
+                    }
+    
+                }
+            }
+        }
+    }
+
+    

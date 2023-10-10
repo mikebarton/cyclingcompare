@@ -1,0 +1,210 @@
+@import '../../styles/variables.scss';
+
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;   
+    margin-bottom: 100px; 
+    background-color: $theme_tertiary;
+  }
+
+  .headerContainer{
+    width: 100%;
+    overflow: hidden;    
+    display:flex;
+    justify-content: center;
+    background-color:$theme_orange;
+
+  }
+
+  .header{    
+    align-content: center;
+    width: $desktop_width;
+    display:flex;
+    flex-direction: row;
+
+    .mission{
+       color: white;
+       font-style: italic;
+       cursor: pointer;
+    }
+    
+
+    img{
+      background-color:$theme_orange;
+      margin: 20px      
+    }
+  }
+
+  .headerRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .headerFarRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin-right: 20px;
+    color: $theme_tertiary;
+
+}
+
+  .linkBar{    
+    font-size: small;    
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+
+
+    a {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+  }  
+
+  .searchRegion{
+      align-self: stretch;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-end;
+    
+      .searchInput{
+        margin-top: 10px;
+        margin-right: 10px;       
+        display: flex;
+        justify-content: flex-end;
+        height: 40%;
+
+        .searchText{
+          input{ 
+            background-color: white;
+            border-width: 0px;
+            height: 30px;
+            border-radius: 0;
+            width: 400px; 
+          }
+        }
+
+        .searchButton{
+          background-color:$theme_blue;
+          height: 32px;
+
+          img{
+            background-color: $theme_blue;
+            margin: 0;
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+  }
+
+  .headerLogo{
+      max-width: 200px;
+      min-height: auto;
+      cursor: pointer;
+      align-self: flex-start;
+  }
+
+  .menuContainer{
+    background-color: $theme_blue;
+    align-items: stretch;
+    height: 50px;  
+  }
+
+  
+
+  .footerContainer{
+    margin-top: 100px;
+    padding: 20px 10px;
+    font-size: small;
+    color: white;
+    min-height: 100px;
+    background-color: $theme_blue;
+    display: flex;
+    justify-content: center;
+
+    .footerPage{
+      width: $desktop_width;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      span{
+        margin-right: 20px;
+      }
+
+      .footerRow{
+        display: flex;
+        margin-left: 20px;
+
+        .mission{
+          margin-top: 20px;
+
+        }
+      }
+    }
+  }
+
+
+  @media only all and (max-width: 1080px){
+    .linkBar{
+      display: none;
+      font-size: xx-small;
+    }
+
+    .headerLogo{
+      width: 150px;      
+      height: auto;
+    }    
+
+    .footerPage{
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-evenly;
+
+      
+    }
+
+    .header{
+      width: 100%;
+    }
+
+    .headerRight{
+      flex-direction: column-reverse;
+    }
+
+    .headerFarRight{
+      margin-right: 0;
+    }
+
+    .mission{
+      margin-right: 10px;
+      h2{font-size: 0.8rem;}
+    }
+
+    .searchRegion .searchInput {
+      height: 70%;
+
+      .searchText{
+          input
+          { 
+            width: 80px; 
+          }
+
+       }
+
+       .searchButton{
+         flex-grow: 1;
+       }
+    }
+  }

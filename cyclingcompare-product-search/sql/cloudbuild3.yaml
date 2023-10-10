@@ -1,0 +1,69 @@
+steps:
+  # - name: 'gcr.io/cloud-builders/docker'
+  #   id: container-build
+  #   args: ['build', '-t', 'gcr.io/bikecompare-dev/product-search-sql', '.']
+  #   waitFor: ['-']
+  - name: gcr.io/cloud-builders/gcloud
+    id: get-key
+    entrypoint: 'bash'
+    args: [ '-c', "gcloud secrets versions access latest --secret=cloud-sql-proxy-key --format='get(payload.data)' | tr '_-' '/+' | base64 -d > /cloudsql/credentials.json" ]
+    volumes:
+      - name: db
+        path: "/cloudsql"
+  # - name: gcr.io/cloud-builders/gcloud
+  #   id: print-key
+  #   entrypoint: 'bash'
+  #   args: [ '-c', "more /cloudsql/credentials.json" ]
+  #   volumes:
+  #     - name: db
+  #       path: "/cloudsql"
+  #   waitFor: ['get-key']
+  # - name: "gcr.io/cloudsql-docker/gce-proxy:1.16"
+  #   id: proxy    
+  #   volumes:
+  #     - name: db
+  #       path: "/cloudsql"
+  #   args:
+  #     - "--publish=127.0.0.1:3307:3307"
+  #     - "/cloud_sql_proxy"
+  #     - "-instances=bikecompare-dev:australia-southeast1:bikecompare-dev-sql=tcp:0.0.0.0:3307"
+  #     - "-credential_file=/cloudsql/credentials.json"
+    # waitFor: ['container-build', 'get-key']
+  - name: "gcr.io/cloud-builders/docker"
+    id: proxy    
+    volumes:
+      - name: db
+        path: "/cloudsql"
+    args:
+      - "run"
+      - "-v=/cloudsql:/cloudsql"      
+      - "-p=127.0.0.1:3307:3307"
+      - "gcr.io/cloudsql-docker/gce-proxy:1.16"
+      - "/cloud_sql_proxy"
+      - "-instances=bikecompare-dev:australia-southeast1:bikecompare-dev-sql=tcp:0.0.0.0:3307"
+      - "-credential_file=/cloudsql/credentials.json"
+      
+  # - name: 'alpine:3'
+  #   id: pause
+  #   args:
+  #     - "sh"
+  #     - "-c"
+  #     - "sleep 15"
+  #   waitFor: ['container-build']
+  - name: "gcr.io/cloud-builders/docker"
+    id: dbmigrate    
+    volumes:
+      - name: db
+        path: "/cloudsql"
+    args:
+      - "run"
+      - "-p=3307:3307"
+      - "gcr.io/bikecompare-dev/product-search-sql"
+  #   waitFor: ['pause']
+  - name: "gcr.io/cloud-builders/docker"
+    id: killproxy
+    waitFor: ["proxy", "dbmigrate"]
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - 'docker kill -s TERM $(docker ps -q --filter "volume=db")'

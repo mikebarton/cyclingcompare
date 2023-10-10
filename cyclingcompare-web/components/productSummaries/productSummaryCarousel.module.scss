@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.productSummaryContainer{
+    // width: 10px;
+    height: 300px;
+    // background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .imageContainer{
+        min-height: 140px;
+
+        img{
+            width: 150px;
+            height: auto;
+        }
+    }
+}
+
+.productWrapper{
+    padding: 10px 10px;
+}
+
+.productTitle{
+    // font-size: large;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.priceLabel{
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.button{
+    background-color: $theme_blue;
+    color: white;
+    padding: 10px 20px;
+}

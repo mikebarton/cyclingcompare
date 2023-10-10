@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["cyclingcompare.comms.api/cyclingcompare.comms.api.csproj", "cyclingcompare.comms.api/"]
+
+RUN dotnet restore "cyclingcompare.comms.api/cyclingcompare.comms.api.csproj"
+COPY . .
+WORKDIR "/src/cyclingcompare.comms.api"
+RUN dotnet build "cyclingcompare.comms.api.csproj" -c Development -o /app
+
+FROM build AS publish
+RUN dotnet publish "cyclingcompare.comms.api.csproj" -c Development -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "cyclingcompare.comms.api.dll"]

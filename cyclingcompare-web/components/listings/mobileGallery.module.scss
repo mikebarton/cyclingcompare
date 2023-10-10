@@ -1,0 +1,14 @@
+.imageContainer{
+    width: 100%;
+    display:flex;
+    // flex-direction: column;
+    // align-items: stretch;
+    justify-content: center;
+
+    img{
+        width: 80%;
+        height: auto;
+        align-self: flex-start;
+    }
+    
+}

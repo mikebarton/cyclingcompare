@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "infrastructure.messaging/1.0.0": {
+        "runtime": {
+          "infrastructure.messaging.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "infrastructure.messaging/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

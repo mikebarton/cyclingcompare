@@ -1,0 +1,72 @@
+.filterTranslation{
+    margin-bottom: 5px;
+    display: flex;
+    border-top-width: 1px;
+    border-bottom-width:1px ;
+    border-top-style: solid;
+    border-bottom-style: solid; 
+    max-width: 800px;
+    overflow-x: auto;
+
+    .actionButton{
+        margin-right:10px;
+        margin-left: 10px;
+    }
+}
+
+.filter{
+    display:flex;
+    align-items: center;
+    padding: 0 10px;
+
+    .filterButtons{
+        color: #8b8b8b;
+        display:flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+}
+
+.translationContainer{
+
+    .actionButtons{
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+        .buttonLabel{
+            margin-left: 10px;
+            font-style: italic;
+        }
+    }
+
+    .filterList{
+        height:70vh;
+        overflow-y: scroll;
+    }
+}
+
+.filterList{
+    height:70vh;
+    overflow-y: scroll;
+}
+
+.selectedFilter{
+    background-color: rgb(155, 155, 255);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.radio{
+    margin-left: 10px;
+    margin-top:10px;
+    align-self: flex-end;
+}
+
+.toolbar{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}

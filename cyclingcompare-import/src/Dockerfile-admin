@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine AS build
+WORKDIR /src
+COPY ["bikecompare.import.admin.web/bikecompare.import.admin.web.csproj", "bikecompare.import.admin.web/"]
+
+RUN dotnet restore "bikecompare.import.admin.web/bikecompare.import.admin.web.csproj"
+COPY . .
+WORKDIR "/src/bikecompare.import.admin.web"
+RUN dotnet build "bikecompare.import.admin.web.csproj" -c Development -o /app
+
+FROM build AS publish
+RUN dotnet publish "bikecompare.import.admin.web.csproj" -c Development -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "bikecompare.import.admin.web.dll"]

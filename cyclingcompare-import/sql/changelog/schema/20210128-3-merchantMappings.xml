@@ -1,0 +1,17 @@
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+
+    <changeSet  author="mikebarton"  id="20210128-3">  
+        <createTable schemaName="bikecompare_import" tableName="MerchantMapping">  
+            <column  name="MerchantMappingId"  type="char(38)" />  
+            <column name="ApiManager" type="tinytext"/>
+            <column name="ApiIdentifier" type="tinytext"/> 
+            <column name="MerchantId" type="char(38)"/>                    
+        </createTable>  
+    </changeSet>
+    
+</databaseChangeLog>

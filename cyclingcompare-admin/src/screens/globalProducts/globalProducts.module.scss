@@ -1,0 +1,37 @@
+.productContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+
+    .productTable{
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        width:60%;
+
+        .productTableHeader{
+            display: flex;
+            width: 100%            
+        }
+    }
+
+    .productPanelContainer{
+        width:100%;
+        overflow-y: scroll;
+        height: 80vh;
+    }
+}
+
+.red{
+    background-color: red;
+}
+
+.productTableHeader{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    
+}

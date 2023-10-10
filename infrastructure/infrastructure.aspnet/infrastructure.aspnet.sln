@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.aspnet", "infrastructure.aspnet\infrastructure.aspnet.csproj", "{86612D54-FD53-4456-8056-8AC51E4EE64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.aspnet.messaging", "infrastructure.aspnet.messaging\infrastructure.aspnet.messaging.csproj", "{BBC7B05B-ED36-4595-8329-0E8FCADCAF01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86612D54-FD53-4456-8056-8AC51E4EE64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86612D54-FD53-4456-8056-8AC51E4EE64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86612D54-FD53-4456-8056-8AC51E4EE64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86612D54-FD53-4456-8056-8AC51E4EE64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC7B05B-ED36-4595-8329-0E8FCADCAF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC7B05B-ED36-4595-8329-0E8FCADCAF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC7B05B-ED36-4595-8329-0E8FCADCAF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC7B05B-ED36-4595-8329-0E8FCADCAF01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9339A69C-E15C-4F2D-BB53-09C7D878425B}
+	EndGlobalSection
+EndGlobal

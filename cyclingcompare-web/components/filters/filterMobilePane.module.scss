@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.paneContainer{
+    display: flex;
+    flex-direction: column;
+
+    .closeButton{
+        position: sticky;
+        top:10px;
+        align-self: flex-end;
+        background-color: $theme_tertiary;
+        border-width: 1px;
+        border-color: $theme_orange;
+        border-style: solid;
+        border-radius: 5px;
+        padding:5px;
+        font-size: 10pt;
+    }
+}

@@ -1,0 +1,166 @@
+# openapi2-run.yaml
+swagger: '2.0'
+info:
+  title: bikecompare-backend-admin
+  description: API to cover the backend services for bikecompare.admin
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+securityDefinitions:
+  firebase:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"    
+    x-google-issuer: "https://securetoken.google.com/bikecompare-dev"
+    x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com"
+    x-google-audiences: "bikecompare-dev"
+paths:
+  /AdminCategory/GetFlatList:
+    get:
+      security:
+        - firebase: []
+      x-google-backend:
+        address: https://product-search-br55qbs25a-ts.a.run.app
+      summary: AdminCategories
+      operationId: getFlatList
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: getFlatListPreFlight
+      responses:
+        200:
+          description: Success
+  /AdminCategory/GetHierarchy:
+    get:
+      security:
+        - firebase: []
+      x-google-backend:
+        address: https://product-search-br55qbs25a-ts.a.run.app
+      summary: AdminCategories
+      operationId: getHierarchy
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: getHierarchyPreFlight
+      responses:
+        200:
+          description: Success
+  /AdminCategory/UpdateCategory:
+    post:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://product-search-br55qbs25a-ts.a.run.app
+      summary: AdminCategories
+      operationId: updateCategory
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: updateCategoryPreFlight
+      responses:
+        200:
+          description: Success
+  /AdminCategory/DeleteCategory/{categoryId}:
+    delete:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://product-search-br55qbs25a-ts.a.run.app
+      parameters:
+        - in: path
+          name: categoryId
+          type: string
+          required: true
+          description: Id of the category that the product will belong to.
+      summary: AdminCategories
+      operationId: deleteCategory
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string    
+  /AdminCategory/CreateCategory:
+    post:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://product-search-br55qbs25a-ts.a.run.app
+      summary: AdminCategories
+      operationId: createCategory
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: createCategoryPreFlight
+      responses:
+        200:
+          description: Success
+  /Category/GetExternalCategories:
+    get:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://bikecompare-import-handlers-br55qbs25a-ts.a.run.app
+      summary: GetExternalCategories
+      operationId: getExternalCategories
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: getExternalCategoriesPreFlight
+      responses:
+        200:
+          description: Success
+  /Category/GetMappings:
+    get:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://bikecompare-import-handlers-br55qbs25a-ts.a.run.app
+      summary: GetMappings
+      operationId: getMappings
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: getMappingsPreFlight
+      responses:
+        200:
+          description: Success
+  /Category/UpdateMapping:
+    post:
+      security:
+        - firebase: []
+      x-google-backend:
+          address: https://bikecompare-import-handlers-br55qbs25a-ts.a.run.app
+      summary: updateMapping
+      operationId: updateMapping
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+    options:
+      operationId: updateMappingPreFlight
+      responses:
+        200:
+          description: Success
+  
+    

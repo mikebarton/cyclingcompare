@@ -1,0 +1,42 @@
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+
+    <changeSet  author="mikebarton"  id="20210128-5">  
+        <createTable schemaName="bikecompare_import" tableName="GlobalProduct">  
+            <column  name="GlobalProductId"  type="char(38)" >
+                <constraints  nullable="true"/>
+            </column>              
+            <column name="Brand"  type="text"/>              
+            <column name="Colour" type="text"/>
+            <column name="ContentRating" type="text"/>
+            <column name="CategoryId" type="char(38)"/>
+            <column name="Currency" type="tinytext"/>             
+            <column name="DateModified" type="datetime"/>
+            <column name="DeliveryCost" type="decimal(10,2)"/>
+            <column name="DeliveryTime" type="text"/>
+            <column name="Description" type="text"/>
+            <column name="Features" type="text"/>
+            <column name="Specs" type="text"/>
+            <column name="Gender" type="text"/>
+            <column name="ImageUrl" type="text"/>
+            <column name="ModelNumber" type="text"/>
+            <column name="Name" type="text"/>
+            <column name="UrlSlug" type="tinytext"/>
+            <column name="Price" type="decimal(20,2)"/>
+            <column name="PriceRrp" type="decimal(20,2)"/>
+            <column name="PromoText" type="text"/>            
+            <column name="Size" type="text"/>     
+            <column name="IsReviewed" type="bit" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>                   
+            <column name="IsDeleted" type="bit" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>                   
+        </createTable>  
+    </changeSet>
+    
+</databaseChangeLog>

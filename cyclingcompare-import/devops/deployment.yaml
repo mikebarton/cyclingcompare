@@ -1,0 +1,9 @@
+resources:
+- type: pubsub.v1.topic
+  name: import-merchant-topic
+  properties:
+    topic: import-merchant
+# - type: pubsub.v1.subscription
+#   name: add-product-subscription
+#   properties:
+#     topic: add-product

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikecompare.import.messages", "bikecompare.import.messages\bikecompare.import.messages.csproj", "{527A39B3-8692-405E-ADE5-794381A82BB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikecompare.messages", "bikecompare.messages\bikecompare.messages.csproj", "{6CA0D583-C1A9-4484-994F-21BD81BAEAD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikecompare.import.messagehandler", "bikecompare.import.messagehandler\bikecompare.import.messagehandler.csproj", "{47F7757D-8590-4BA1-ADFA-9EAC0A4FCB1E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikecompare.import.commissionfactory", "bikecompare.import.commissionfactory\bikecompare.import.commissionfactory.csproj", "{D460B4AC-B1DF-41B8-AC3F-E467D67D6C85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikecompare.import.admin.web", "bikecompare.import.admin.web\bikecompare.import.admin.web.csproj", "{05CA4884-5296-4B54-A834-D92AC1D1A909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikecompare.import.impact", "bikecompare.import.impact\bikecompare.import.impact.csproj", "{5BA88305-C491-4C66-8621-166B163A189C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{527A39B3-8692-405E-ADE5-794381A82BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{527A39B3-8692-405E-ADE5-794381A82BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{527A39B3-8692-405E-ADE5-794381A82BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{527A39B3-8692-405E-ADE5-794381A82BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA0D583-C1A9-4484-994F-21BD81BAEAD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA0D583-C1A9-4484-994F-21BD81BAEAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA0D583-C1A9-4484-994F-21BD81BAEAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA0D583-C1A9-4484-994F-21BD81BAEAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F7757D-8590-4BA1-ADFA-9EAC0A4FCB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F7757D-8590-4BA1-ADFA-9EAC0A4FCB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F7757D-8590-4BA1-ADFA-9EAC0A4FCB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F7757D-8590-4BA1-ADFA-9EAC0A4FCB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D460B4AC-B1DF-41B8-AC3F-E467D67D6C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D460B4AC-B1DF-41B8-AC3F-E467D67D6C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D460B4AC-B1DF-41B8-AC3F-E467D67D6C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D460B4AC-B1DF-41B8-AC3F-E467D67D6C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CA4884-5296-4B54-A834-D92AC1D1A909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CA4884-5296-4B54-A834-D92AC1D1A909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CA4884-5296-4B54-A834-D92AC1D1A909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CA4884-5296-4B54-A834-D92AC1D1A909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA88305-C491-4C66-8621-166B163A189C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA88305-C491-4C66-8621-166B163A189C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA88305-C491-4C66-8621-166B163A189C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA88305-C491-4C66-8621-166B163A189C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5B98BEC-87D7-4012-8A2F-8758958C6522}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        align-self: flex-start;
+        margin-left: 5px;
+    }
+
+    .titleRow{
+        display: flex;
+        justify-content: space-between;
+
+        .titleWidgets{
+            display: flex;
+            align-items: center;
+
+            
+
+            .filterIcon{
+                display: none;
+                align-items: center;
+            }
+        }
+    }
+
+    .bannerContainer{
+        width: 100%;
+        height: auto;
+        align-self: flex-end;
+    }
+}
+
+.paginationContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+@media only all and (max-width: 1080px){
+
+    .mainContainer{
+    
+        .titleRow{    
+
+            .titleWidgets{
+    
+                .filterIcon{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }        
+    }
+    
+}

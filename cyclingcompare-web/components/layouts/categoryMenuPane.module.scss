@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.menuContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;    
+    width: $desktop_width;
+    height: 300px;
+    background-color: white;
+    z-index: 2;
+    box-shadow: -10px 10px 10px #383838ee;
+    position: absolute;
+    
+}
+
+.menuLeft{
+    // background-color: red;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.subMenuItem{
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+.menuRight{
+    background-color: green;
+    
+}

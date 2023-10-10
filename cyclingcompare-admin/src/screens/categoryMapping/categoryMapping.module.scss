@@ -1,0 +1,27 @@
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+
+    .tableContainer{
+        /* width: 100%; */
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        width: 100%;
+    }
+    
+    .tableHeader{
+        display: flex;
+        align-items: center;
+        
+        .headerControl{
+            display: flex;
+            margin-right: 20px;
+            align-items: center;            
+        }
+    }
+}
